@@ -102,6 +102,6 @@ public class InventoryTest {
 
     @Test(expected = BookNotFoundException.class)
     public void remove_book_should_fail_when_invalid_isbn() throws BookNotFoundException {
-        bookInventoryMock.loadBook("1111");
+        bookInventoryMock.removeBook("1111");
     }
 }

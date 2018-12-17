@@ -11,6 +11,10 @@
 
     <name>Demo Bookshelf Inventory API</name>
     <description>Defines the API for the Bookshelf inventory</description>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
     <build>
         <plugins>
@@ -25,21 +29,23 @@
                         <Bundle-Category>Sample</Bundle-Category>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <!-- will be imported by the inventory implementation-->
-                        <Export-Package>com.demo.felix.bookshelf.inventory.api</Export-Package>
+                        <Export-Package>
+                            com.demo.felix.bookshelf.inventory.api.*
+                        </Export-Package>
+                        <Private-Package>
+                            com.demo.felix.bookshelf.inventory.api.beans;
+                            com.demo.felix.bookshelf.inventory.api.exceptions
+                        </Private-Package>
                         <!-- provides the plugin with the name of the distribution management repository-->
                         <remoteOBR>repo-release</remoteOBR>
                         <prefixUrl>change me</prefixUrl>
                     </instructions>
                 </configuration>
             </plugin>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <inherited>true</inherited>
-            </plugin>
         </plugins>
     </build>
 
-<!-- used during the deploy phase of a build and tells Maven where the packaged bundle is to be deployed -->
+    <!-- used during the deploy phase of a build and tells Maven where the packaged bundle is to be deployed -->
     <distributionManagement>
         <repository>
             <id>repo-release</id>

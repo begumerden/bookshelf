@@ -17,9 +17,9 @@ public interface BookInventory {
         ISBN_LIKE,
         TITLE_LIKE,
         AUTHOR_LIKE,
-        GROUP_LIKE,
-        GRADE_GT,
-        GRADE_LT
+        CATEGORY_LIKE,
+        RATING_GT,
+        RATING_LT
     }
 
     Set<String> getCategories();
@@ -35,4 +35,7 @@ public interface BookInventory {
     void removeBook(String isbn) throws BookNotFoundException;
 
     Set<String> searchBooks(Map<SearchCriteria, String> criteria);
+
+    int getBookSize();
+
 }
