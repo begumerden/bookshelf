@@ -7,9 +7,9 @@ import com.demo.felix.bookshelf.inventory.api.exceptions.BookAlreadyExistsExcept
 import com.demo.felix.bookshelf.inventory.api.exceptions.BookNotFoundException;
 import com.demo.felix.bookshelf.inventory.api.exceptions.InvalidBookException;
 import com.demo.felix.bookshelf.service.api.BookshelfService;
-import com.demo.felix.bookshelf.service.impl.exceptions.BookInventoryNotRegisteredRuntimeException;
-import com.demo.felix.bookshelf.service.impl.exceptions.InvalidCredentialsException;
-import com.demo.felix.bookshelf.service.impl.exceptions.SessionNotValidRuntimeException;
+import com.demo.felix.bookshelf.service.api.exceptions.BookInventoryNotRegisteredRuntimeException;
+import com.demo.felix.bookshelf.service.api.exceptions.InvalidCredentialsException;
+import com.demo.felix.bookshelf.service.api.exceptions.SessionNotValidRuntimeException;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 

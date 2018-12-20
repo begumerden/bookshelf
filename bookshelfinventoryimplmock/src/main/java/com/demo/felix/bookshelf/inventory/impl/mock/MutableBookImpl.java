@@ -56,4 +56,9 @@ public class MutableBookImpl implements MutableBook {
     public void setRating(int rating) {
         this.rating = rating;
     }
+
+    public String toString() {
+        return String.format("Category:%s-Title:%s-Author:%s-Rating:%s",
+                getCategory(), getTitle(), getAuthor(), getRating());
+    }
 }

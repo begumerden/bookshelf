@@ -1,6 +1,6 @@
 package com.demo.felix.bookshelf.service.api;
 
-import com.demo.felix.bookshelf.service.impl.exceptions.InvalidCredentialsException;
+import com.demo.felix.bookshelf.service.api.exceptions.InvalidCredentialsException;
 
 /**
  * @author begum

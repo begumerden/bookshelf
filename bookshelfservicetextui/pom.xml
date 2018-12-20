@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.demo.felix</groupId>
-    <artifactId>bookshelf-inventory-impl-mock</artifactId>
-    <version>1.5.1</version>
+    <artifactId>bookshelf-service-text-ui</artifactId>
+    <version>1.8.0</version>
     <packaging>bundle</packaging>
 
-    <name>Bookshelf Inventory Impl (Mock)</name>
-    <description>Memory based mock implementation</description>
+    <name>Bookshelf Service Text UI</name>
+    <description>Bookshelf Service Text User Interface(Command-line)</description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -19,26 +19,24 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.demo.felix</groupId>
-            <artifactId>bookshelf-inventory-api</artifactId>
-            <version>1.5.0</version>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.gogo.runtime</artifactId>
+            <version>1.0.10</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.5</version>
-        </dependency>
-        <!--make the OSGi Core API available for our bundle-->
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.core</artifactId>
             <version>5.0.0</version>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
+            <groupId>com.demo.felix</groupId>
+            <artifactId>bookshelf-service</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.demo.felix</groupId>
+            <artifactId>bookshelf-inventory-api</artifactId>
+            <version>1.5.0</version>
         </dependency>
     </dependencies>
 
@@ -53,22 +51,15 @@
                     <instructions>
                         <Bundle-Category>Sample</Bundle-Category>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-                        <Bundle-Activator>
-                            com.demo.felix.bookshelf.inventory.impl.mock.activator.BookInventoryMockImplActivator
-                        </Bundle-Activator>
                         <Export-Package>
-                            com.demo.felix.bookshelf.inventory.impl.mock
+                            com.demo.felix.bookshelf.service.text.ui
                         </Export-Package>
+                        <Bundle-Activator>
+                            com.demo.felix.bookshelf.service.text.ui.activator.BookshelfTextUiActivator
+                        </Bundle-Activator>
                         <Private-Package>
-                            com.demo.felix.bookshelf.inventory.impl.mock.activator;
-                            com.demo.felix.bookshelf.inventory.impl.mock.helpers;
+                            com.demo.felix.bookshelf.service.text.ui.activator
                         </Private-Package>
-                        <!-- Embedding as a non osgi jar dependency-->
-                        <Import-Package>
-                            !org.apache.commons.lang3,*
-                        </Import-Package>
-                        <Embed-Dependency>commons-lang3</Embed-Dependency>
-                        <Embed-Transitive>true</Embed-Transitive>
                     </instructions>
                     <remoteOBR>repo-release</remoteOBR>
                     <prefixUrl>file:///C:/Users/dev/Projects/Releases</prefixUrl>

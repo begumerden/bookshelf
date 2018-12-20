@@ -51,14 +51,14 @@
                             com.demo.felix.bookshelf.service.impl.activator.BookshelfServiceImplActivator
                         </Bundle-Activator>
                         <Export-Package>
-                            com.demo.felix.bookshelf.service.api
+                            com.demo.felix.bookshelf.service.api.*
                         </Export-Package>
                         <Private-Package>
                             com.demo.felix.bookshelf.service.impl.*;
                         </Private-Package>
                     </instructions>
                     <remoteOBR>repo-release</remoteOBR>
-                    <prefixUrl>change me</prefixUrl>
+                    <prefixUrl>file:///C:/Users/dev/Projects/Releases</prefixUrl>
                 </configuration>
             </plugin>
         </plugins>
@@ -67,7 +67,7 @@
     <distributionManagement>
         <repository>
             <id>repo-release</id>
-            <url>change me</url>
+            <url>file:///C:/Users/dev/Projects/Releases</url>
         </repository>
     </distributionManagement>
 

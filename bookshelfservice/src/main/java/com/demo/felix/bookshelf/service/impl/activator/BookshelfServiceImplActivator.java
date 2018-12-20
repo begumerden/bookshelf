@@ -1,19 +1,10 @@
 package com.demo.felix.bookshelf.service.impl.activator;
 
-import com.demo.felix.bookshelf.inventory.api.BookInventory;
-import com.demo.felix.bookshelf.inventory.api.beans.Book;
-import com.demo.felix.bookshelf.inventory.api.exceptions.BookAlreadyExistsException;
-import com.demo.felix.bookshelf.inventory.api.exceptions.BookNotFoundException;
-import com.demo.felix.bookshelf.inventory.api.exceptions.InvalidBookException;
 import com.demo.felix.bookshelf.service.api.BookshelfService;
 import com.demo.felix.bookshelf.service.impl.BookshelfServiceImpl;
-import com.demo.felix.bookshelf.service.impl.exceptions.InvalidCredentialsException;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceReference;
 import org.osgi.framework.ServiceRegistration;
-
-import java.util.Set;
 
 /**
  * @author begum
